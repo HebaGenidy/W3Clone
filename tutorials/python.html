@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Tutorial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a192f;
+      color: #f1f1f1;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1f2937;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar-left, .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navbar img {
+      height: 40px;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 8px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2d3748;
+      top: 30px;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 20px;
+      padding: 5px 10px;
+      width: 200px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 5px;
+      font-style: italic;
+    }
+
+    .search-box i {
+      color: black;
+    }
+
+    .nav-icon {
+      color: #d1d5db;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      gap: 5px;
+    }
+
+    .nav-icon i {
+      color: #a855f7;
+    }
+
+    .login-btn {
+      background-color: #10b981;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+
+    /* Sub Navigation */
+    .scroll-nav {
+      overflow-x: auto;
+      background-color: #0b111b;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      position: fixed;
+      top: 60px; 
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .cls-nav {
+      display: inline-flex;
+      white-space: nowrap;
+      padding: 10px;
+      min-width: max-content;
+    }
+
+    .cls-nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .cls-nav a:hover {
+      color: yellow;
+    }
+
+    .scroll-nav::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-nav::-webkit-scrollbar-thumb {
+      background-color: #444;
+      border-radius: 10px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #0f2537;
+      height: calc(100vh - 100px); 
+      overflow-y: auto;
+      padding: 20px 0;
+      position: sticky;
+      top: 100px;
+      top: 100px; 
+      left: 0;
+    }
+
+    .sidebar h3 {
+      padding-left: 20px;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #eee;
+      transition: background-color 0.2s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #04AA6D;
+      color: #fff;
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 20px;
+      padding: 140px 40px 40px 40px; 
+      background-color: #0a192f;
+      min-height: 100vh;
+      flex-grow: 1;
+    }
+
+    .main h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #038f5f;
+    }
+
+    .card {
+      background-color: #063f3f;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #fff;
+    }
+
+    .card p {
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .card .btn {
+      margin-top: 20px;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+
+    .footer {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-left: 3px solid yellow;
+  padding-left: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffc107;
+}
+.about {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.about:hover {
+  color: yellow;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+
+      <div class="dropdown">
+        <a href="#">Tutorials ▾</a>
+        <div class="dropdown-content">
+          <a href="/Html.html">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Exercises ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Certificates ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Service 1</a>
+          <a href="#">Service 2</a>
+        </div>
+      </div>
+      <a href="/about.html" class="about">About</a>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search"></i>
+      </div>
+
+      <i class="fa-solid fa-circle-half-stroke toggle-dark"></i>
+    </div>
+
+    <div class="navbar-right">
+      <div class="nav-icon"><i class="fa-solid fa-code"></i> Spaces</div>
+      <div class="nav-icon"><i class="fa-solid fa-graduation-cap"></i> For Teachers</div>
+      <div class="nav-icon"><i class="fa-solid fa-cart-shopping"></i> Get Certified</div>
+      <a href="/Register.html" class="login-btn">Sign In</a>
+    </div>
+  </div>
+
+  <!-- Sub Navigation -->
+  <nav class="scroll-nav">
+    <div class="cls-nav">
+      <a href="/Html.html">HTML</a>
+      <a href="/css.html">CSS</a>
+      <a href="/java.html">JAVASCRIPT</a>
+      <a href="/sql.html">SQL</a>
+      <a href="/python.html">PYTHON</a>
+      <a href="#">JAVA</a>
+      <a href="#">PHP</a>
+      <a href="#">HOW TO</a>
+      <a href="#">W3.CSS</a>
+      <a href="#">C</a>
+      <a href="#">C++</a>
+      <a href="#">C#</a>
+      <a href="#">BOOTSTRAP</a>
+      <a href="#">REACT</a>
+      <a href="#">MYSQL</a>
+      <a href="#">JQUERY</a>
+      <a href="#">EXCEL</a>
+      <a href="#">XML</a>
+      <a href="#">DJANGO</a>
+      <a href="#">NUMPY</a>
+      <a href="#">DSA</a>
+    </div>
+  </nav>
+
+   <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Python Tutorial</h3>
+      <a href="#" class="active">Python HOME</a>
+      <a href="#">Python Introduction</a>
+      <a href="#">Python Syntax</a>
+      <a href="#">Python Variables</a>
+      <a href="#">Python Data Types</a>
+      <a href="#">Python Operators</a>
+      <a href="#">Python Lists</a>
+      <a href="#">Python Tuples</a>
+      <a href="#">Python Sets</a>
+      <a href="#">Python Dictionaries</a>
+      <a href="#">Python If...Else</a>
+      <a href="#">Python Loops</a>
+      <a href="#">Python Functions</a>
+      <a href="#">Python Lambda</a>
+      <a href="#">Python Arrays</a>
+      <a href="#">Python Classes/Objects</a>
+      <a href="#">Python Inheritance</a>
+      <a href="#">Python Modules</a>
+      <a href="#">Python Try...Except</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <h1>Python Tutorial</h1>
+      <div class="nav-buttons">
+        <a href="/sql.html" class="btn">← SQL</a>
+        <a href="#" class="btn">Next →</a>
+      </div>
+
+      <div class="card">
+        <h2>Learn Python</h2>
+        <p>Python is a popular programming language.</p>
+        <p>It was created by Guido van Rossum, and released in 1991.</p>
+        <p>It is used for web development, data analysis, automation, AI, and more.</p>
+        <a href="#" class="btn">Start learning Python now »</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3>Top Tutorials</h3>
+      <ul>
+        <li><a href="#">HTML Tutorial</a></li>
+        <li><a href="#">CSS Tutorial</a></li>
+        <li><a href="#">JavaScript Tutorial</a></li>
+        <li><a href="#">SQL Tutorial</a></li>
+        <li><a href="#">Python Tutorial</a></li>
+        <li><a href="#">Java Tutorial</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Top References</h3>
+      <ul>
+        <li><a href="#">HTML Reference</a></li>
+        <li><a href="#">CSS Reference</a></li>
+        <li><a href="#">JavaScript Reference</a></li>
+        <li><a href="#">SQL Reference</a></li>
+        <li><a href="#">Python Reference</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Top Examples</h3>
+      <ul>
+        <li><a href="#">HTML Examples</a></li>
+        <li><a href="#">CSS Examples</a></li>
+        <li><a href="#">JavaScript Examples</a></li>
+        <li><a href="#">SQL Examples</a></li>
+        <li><a href="#">Python Examples</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Get Certified</h3>
+      <ul>
+        <li><a href="#">HTML Certificate</a></li>
+        <li><a href="#">CSS Certificate</a></li>
+        <li><a href="#">JavaScript Certificate</a></li>
+        <li><a href="#">Python Certificate</a></li>
+        <li><a href="#">SQL Certificate</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 1999–2025 by YourWebsite. All Rights Reserved.</p>
+    <p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+</body>
+</html>

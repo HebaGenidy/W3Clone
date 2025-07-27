@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About W3Schools</title>
+  <style>
+    /* Top Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d3748;
+  top: 30px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-style: italic;
+}
+
+.search-box i {
+  color: black;
+}
+
+.nav-icon {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 5px;
+}
+
+.nav-icon i {
+  color: #a855f7;
+}
+
+.login-btn {
+  background-color: #10b981;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sub Nav */
+.scroll-nav {
+  overflow-x: auto;
+  background-color: #0b111b;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.cls-nav {
+  display: inline-flex;
+  white-space: nowrap;
+  background-color: #0b111b;
+  padding: 10px;
+  min-width: max-content;
+}
+
+.cls-nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cls-nav a:hover {
+  color: yellow;
+}
+
+
+.scroll-nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-nav::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+}
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1d2b36;
+      color: #eee;
+    }
+
+    .sidebar {
+      width: 300px;
+      height: 100vh;
+      background-color: #0f1b24;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .sidebar a.active {
+      background-color: #04aa6d;
+    }
+
+    .content {
+      margin-left: 300px;
+      padding: 30px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      background-color: #04aa6d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .about-box {
+      margin-top: 30px;
+      background-color: #23242b;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 40px;
+    }
+
+    .stat {
+      background-color: white;
+      color: #23242b;
+      padding: 20px;
+      border-radius: 8px;
+      width: 150px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .advertisement {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .section {
+      background-color: #0f1b24;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+
+    .section h2 {
+      color: #fff;
+    }
+
+    .about {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.about:hover {
+  color: yellow;
+}
+
+    .tutorials a {
+      display: block;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #112b38;
+      color: white;
+      text-decoration: underline;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .tutorials a:hover {
+      background-color: #04aa6d;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 18px;
+  border-left: 3px solid yellow;
+  padding-left: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  color: #ccc;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffc107;
+}
+
+.about {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.about:hover {
+  color: yellow;
+}
+
+  </style>
+</head>
+<body>
+     <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+
+      <div class="dropdown">
+        <a href="#">Tutorials ▾</a>
+        <div class="dropdown-content">
+          <a href="/Html.html">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Exercises ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Certificates ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Service 1</a>
+          <a href="#">Service 2</a>
+        </div>
+      </div>
+      <a href="/about.html" class="about">About</a>
+
+
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search"></i>
+      </div>
+
+      <i class="fa-solid fa-circle-half-stroke toggle-dark"></i>
+    </div>
+
+    <div class="navbar-right">
+      <div class="nav-icon"><i class="fa-solid fa-code"></i> Spaces</div>
+      <div class="nav-icon"><i class="fa-solid fa-graduation-cap"></i> For Teachers</div>
+      <div class="nav-icon"><i class="fa-solid fa-cart-shopping"></i> Get Certified</div>
+      <a href="/Register.html" class="login-btn">Sign In</a>
+    </div>
+  </div>
+
+  <!-- Sub Navigation -->
+  <nav class="cls-nav">
+    <a href="/Html.html">HTML</a>
+    <a href="/css.html">CSS</a>
+    <a href="/java.html">JAVASCRIPT</a>
+    <a href="/sql.html">SQL</a>
+    <a href="/python.html">PYTHON</a>
+    <a href="/javaa.html">JAVA</a>
+    <a href="#">PHP</a>
+    <a href="#">HOW TO</a>
+    <a href="#">W3.CSS</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">C#</a>
+    <a href="#">BOOTSTRAP</a>
+    <a href="#">REACT</a>
+    <a href="#">MYSQL</a>
+    <a href="#">JQUERY</a>
+    <a href="#">EXCEL</a>
+    <a href="#">XML</a>
+    <a href="#">DJANGO</a>
+    <a href="#">NUMPY</a>
+    <a href="#">Xml</a>
+    <a href="#">C</a>
+    <a href="#">DSA</a>
+  </nav>
+  <div class="sidebar">
+    <h2>About Us</h2>
+    <a class="active" href="#">About W3Schools</a>
+    <a href="#">About Terms</a>
+    <a href="#">About Privacy</a>
+    <a href="#">About Cookies</a>
+  </div>
+
+  <div class="content">
+    <div class="about-box">
+      <h2>W3Schools</h2>
+      <p style="font-size: 20px;">The World's Largest Web Developer Site</p>
+
+      <div class="stats">
+        <div class="stat">3BN+</div>
+        <div class="stat">70M+</div>
+        <div class="stat">25+</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>What is W3Schools?</h2>
+      <p>We create simplified and interactive learning experiences.</p>
+      <p>Learning web development should be easy to understand and available for everyone, everywhere!</p>
+      <p>W3Schools is a school for web developers, covering all the aspects of web development:</p>
+
+      <div class="tutorials">
+        <a href="#">HTML Tutorial</a>
+        <a href="#">CSS Tutorial</a>
+        <a href="#">JavaScript Tutorial</a>
+        <a href="#">PHP Tutorial</a>
+        <a href="#">SQL Tutorial</a>
+        <a href="#">Python Tutorial</a>
+        <a href="#">Java Tutorial</a>
+        <a href="#">C Tutorial</a>
+        <a href="#">C++ Tutorial</a>
+        <a href="#">C# Tutorial</a>
+        <a href="#">Bootstrap Tutorial</a>
+        <a href="#">React Tutorial</a>
+        <a href="#">Node.js Tutorial</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Top Tutorials</h3>
+        <ul>
+          <li><a href="#">HTML Tutorial</a></li>
+          <li><a href="#">CSS Tutorial</a></li>
+          <li><a href="#">JavaScript Tutorial</a></li>
+          <li><a href="#">SQL Tutorial</a></li>
+          <li><a href="#">Python Tutorial</a></li>
+          <li><a href="#">Java Tutorial</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Top References</h3>
+        <ul>
+          <li><a href="#">HTML Reference</a></li>
+          <li><a href="#">CSS Reference</a></li>
+          <li><a href="#">JavaScript Reference</a></li>
+          <li><a href="#">SQL Reference</a></li>
+          <li><a href="#">Python Reference</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Top Examples</h3>
+        <ul>
+          <li><a href="#">HTML Examples</a></li>
+          <li><a href="#">CSS Examples</a></li>
+          <li><a href="#">JavaScript Examples</a></li>
+          <li><a href="#">SQL Examples</a></li>
+          <li><a href="#">Python Examples</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Get Certified</h3>
+        <ul>
+          <li><a href="#">HTML Certificate</a></li>
+          <li><a href="#">CSS Certificate</a></li>
+          <li><a href="#">JavaScript Certificate</a></li>
+          <li><a href="#">Python Certificate</a></li>
+          <li><a href="#">SQL Certificate</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 1999–2025 by <strong>YourWebsite</strong>. All Rights Reserved.</p>
+      <p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

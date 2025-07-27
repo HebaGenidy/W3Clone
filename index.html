@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>W3Schools </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b111b;
+  color: white;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f2937;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2d3748;
+  top: 30px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 200px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-style: italic;
+}
+
+.search-box i {
+  color: black;
+}
+
+.nav-icon {
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 5px;
+}
+
+.nav-icon i {
+  color: #a855f7;
+}
+
+.login-btn {
+  background-color: #10b981;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Sub Nav */
+.scroll-nav {
+  overflow-x: auto;
+  background-color: #0b111b;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.cls-nav {
+  display: inline-flex;
+  white-space: nowrap;
+  padding: 10px;
+  min-width: max-content;
+}
+
+.cls-nav a {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cls-nav a:hover {
+  color: yellow;
+}
+
+.scroll-nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-nav::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 10px;
+}
+
+
+.main-content {
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ffe87c;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 400px;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  padding: 15px 20px;
+  font-size: 18px;
+  background-color: #00c28a;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.begin-link a {
+  color: white;
+  font-size: 18px;
+  text-decoration: underline;
+}
+.hero-section {
+      background-color: #dff1e0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 100px;
+      position: relative;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      background-color: #0b111b;
+      border-bottom-left-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      
+      
+    }
+    .left-content {
+      z-index: 2;
+      flex: 1;
+      margin-left: 300px;
+    }
+
+    .left-content h1 {
+      font-size: 70px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .left-content p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .left-content .btn {
+      display: block;
+      width: 220px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-green {
+      background-color: #10b981;
+      color: white;
+    }
+
+    .btn-yellow {
+      background-color: #fef08a;
+      color: black;
+    }
+
+    .btn-dark {
+      background-color: #1f2937;
+      color: white;
+    }
+
+    .btn-pink {
+      background-color: #fca5a5;
+      color: black;
+    }
+
+    .right-box {
+      flex: 1;
+      max-width: 500px;
+      background-color: #374151;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: white;
+      z-index: 2;
+      margin-top: 150px;
+      margin-right: 200px;
+    }
+
+    .right-box h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .code-block {
+      background-color: #0f172a;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 14px;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      color: #ccc;
+      
+    }
+
+    .code-block span {
+      color: #22d3ee;
+    }
+
+    .code-block .tag {
+      color: #f472b6;
+    }
+
+    .code-block .text {
+      color: #fff;
+    }
+
+    .try-btn {
+      display: block;
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background-color: #10b981;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero-section1 {
+      background-color: #dff1e0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 100px;
+      position: relative;
+    }
+
+    .hero-section1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      border-bottom-left-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      
+      
+    }
+
+    .hero-section2 {
+      background-color: #dff1e0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 100px;
+      position: relative;
+    }
+
+    .hero-section2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      border-bottom-left-radius: 50% 30%;
+      border-bottom-right-radius: 50% 30%;
+      
+      
+    }
+
+  .footer {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-left: 3px solid yellow;
+  padding-left: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffc107;
+}
+.about {
+  color: white;
+  text-decoration: none;
+  padding: 6px 8px;
+}
+
+.about:hover {
+  color: yellow;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+
+      <div class="dropdown">
+        <a href="#">Tutorials ▾</a>
+        <div class="dropdown-content">
+          <a href="/Html.html">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Exercises ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Certificates ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HTML</a>
+          <a href="#">CSS</a>
+          <a href="#">JS</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="#">Service 1</a>
+          <a href="#">Service 2</a>
+        </div>
+      </div>
+      <a href="/about.html" class="about">About</a>
+
+
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <i class="fa fa-search"></i>
+      </div>
+
+      <i class="fa-solid fa-circle-half-stroke toggle-dark"></i>
+    </div>
+
+    <div class="navbar-right">
+      <div class="nav-icon"><i class="fa-solid fa-code"></i> Spaces</div>
+      <div class="nav-icon"><i class="fa-solid fa-graduation-cap"></i> For Teachers</div>
+      <div class="nav-icon"><i class="fa-solid fa-cart-shopping"></i> Get Certified</div>
+      <a href="/Register.html" class="login-btn">Sign In</a>
+    </div>
+  </div>
+
+  <!-- Sub Navigation -->
+  <nav class="cls-nav">
+    <a href="/Html.html">HTML</a>
+    <a href="/css.html">CSS</a>
+    <a href="/java.html">JAVASCRIPT</a>
+    <a href="/sql.html">SQL</a>
+    <a href="/python.html">PYTHON</a>
+    <a href="/javaa.html">JAVA</a>
+    <a href="#">PHP</a>
+    <a href="#">HOW TO</a>
+    <a href="#">W3.CSS</a>
+    <a href="#">C</a>
+    <a href="#">C++</a>
+    <a href="#">C#</a>
+    <a href="#">BOOTSTRAP</a>
+    <a href="#">REACT</a>
+    <a href="#">MYSQL</a>
+    <a href="#">JQUERY</a>
+    <a href="#">EXCEL</a>
+    <a href="#">XML</a>
+    <a href="#">DJANGO</a>
+    <a href="#">NUMPY</a>
+    <a href="#">Xml</a>
+    <a href="#">C</a>
+    <a href="#">DSA</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Learn to Code</h1>
+    <p class="subtitle">With the world's largest web developer site.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search our tutorials, e.g. HTML" />
+      <button>🔍</button>
+    </div>
+    <p class="begin-link"><a href="#">Not Sure Where To Begin?</a></p>
+  </main>
+
+  <div class="hero-section">
+    <div class="left-content">
+      <h1>HTML</h1>
+      <p>The language for building web pages</p>
+      <button class="btn btn-green">Learn HTML</button>
+      <button class="btn btn-yellow">Video Tutorial</button>
+      <button class="btn btn-dark">HTML Reference</button>
+      <button class="btn btn-pink">Get Certified</button>
+    </div>
+
+    <div class="right-box">
+      <h3>HTML Example:</h3>
+      <div class="code-block">
+        <span class="tag">&lt;!DOCTYPE html&gt;</span><br>
+        <span class="tag">&lt;html&gt;</span><br>
+        <span class="tag">&lt;head&gt;</span><br>
+        <span class="tag">&lt;title&gt;</span><span class="text">HTML Tutorial</span><span class="tag">&lt;/title&gt;</span><br>
+        <span class="tag">&lt;/head&gt;</span><br>
+        <span class="tag">&lt;body&gt;</span><br><br>
+        <span class="tag">&lt;h1&gt;</span><span class="text">This is a heading</span><span class="tag">&lt;/h1&gt;</span><br>
+        <span class="tag">&lt;p&gt;</span><span class="text">This is a paragraph.</span><span class="tag">&lt;/p&gt;</span><br><br>
+        <span class="tag">&lt;/body&gt;</span><br>
+        <span class="tag">&lt;/html&gt;</span>
+      </div>
+      <button class="try-btn">Try it Yourself</button>
+    </div>
+    
+  </div>
+
+  <!-- CSS Section -->
+<div class="hero-section1" style="background-color: #fef08a; margin: 0%;">
+  <div class="left-content" style="margin-left: 300px;">
+    <h1>CSS</h1>
+    <p>The language for styling web pages</p>
+    <button class="btn btn-green">Learn CSS</button>
+    <button class="btn btn-dark">CSS Reference</button>
+    <button class="btn btn-pink">Get Certified</button>
+  </div>
+
+  <div class="right-box" style="margin-top: 150px; margin-right: 200px;">
+    <h3>CSS Example:</h3>
+    <div class="code-block">
+    <span class="text">body</span> {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">background-color</span>: <span class="text">lightblue</span>;<br>}<br><br>
+    <span class="text">h1</span> {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">color</span>: <span class="text">white</span>;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">text-align</span>: <span class="text">center</span>;<br>}<br><br>
+    <span class="text">p</span> {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="tag">font-family</span>: <span class="text">verdana</span>;<br>}
+        </div>
+        <button class="try-btn">Try it Yourself</button>
+    </div>
+  </div>
+
+  
+ <!-- JavaScript Section -->
+<div class="hero-section1" style="background-color: #0f172a; margin: 0%;">
+  <div class="left-content" style="margin-left: 300px;">
+    <h1 style="color: white;">JavaScript</h1>
+    <p style="color:white;">The language for styling web pages</p>
+    <button class="btn btn-green">Learn JavaScript</button>
+    <button class="btn btn-dark">JavaScript Reference</button>
+    <button class="btn btn-pink">Get Certified</button>
+  </div>
+
+  <div class="right-box" style="margin-top: 150px; margin-right: 200px;">
+    <h3>JavaScript Example:</h3>
+    <div class="code-block">
+      <span class="text">&lt;button</span> <span class="tag">onclick</span>=<span class="text">"myFunction()"</span><span class="text">&gt;</span>Click Me!<span class="text">&lt;/button&gt;</span><br><br>
+
+      <span class="text">&lt;script&gt;</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="text">function</span> <span class="tag">myFunction</span>() {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text">let</span> x = <span class="text">document.getElementById</span>(<span class="text">"demo"</span>);<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.style.fontSize = <span class="text">"25px"</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x.style.color = <span class="text">"red"</span>;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      <span class="text">&lt;/script&gt;</span>
+    </div>
+    <button class="try-btn">Try it Yourself</button>
+  </div>
+</div>
+
+<!-- Python Section -->
+<div class="hero-section2" style="background-color: #c7d2fe; margin: 0%;">
+  <div class="left-content" style="margin-left: 300px;">
+    <h1 style="color: #111;">Python</h1>
+    <p style="color:#111;">A popular programming language for web and data</p>
+    <button class="btn btn-green">Learn Python</button>
+    <button class="btn btn-dark">Python Reference</button>
+    <button class="btn btn-pink">Get Certified</button>
+  </div>
+
+  <div class="right-box" style="margin-top: 150px; margin-right: 200px;">
+    <h3>Python Example:</h3>
+    <div class="code-block">
+      <span class="text">print</span>(<span class="tag">"Hello, World!"</span>)<br><br>
+
+      <span class="text">x</span> = <span class="tag">5</span><br>
+      <span class="text">y</span> = <span class="tag">10</span><br>
+      <span class="text">sum</span> = <span class="text">x</span> + <span class="text">y</span><br>
+      <span class="text">print</span>(<span class="tag">"Sum is:"</span>, <span class="text">sum</span>)
+    </div>
+    <button class="try-btn">Try it Yourself</button>
+  </div>
+</div> 
+
+<!-- SQL Section -->
+<div class="hero-section2" style="background-color: #fcd34d; margin: 0%;">
+  <div class="left-content" style="margin-left: 300px;">
+    <h1 style="color: #111;">SQL</h1>
+    <p style="color:#111;">A language for accessing and managing databases</p>
+    <button class="btn btn-green">Learn SQL</button>
+    <button class="btn btn-dark">SQL Reference</button>
+    <button class="btn btn-pink">Get Certified</button>
+  </div>
+
+  <div class="right-box" style="margin-top: 150px; margin-right: 200px;">
+    <h3>SQL Example:</h3>
+    <div class="code-block">
+      <span class="text">SELECT</span> <span class="tag">*</span> <span class="text">FROM</span> <span class="tag">Customers</span><br>
+      <span class="text">WHERE</span> <span class="tag">Country</span> = <span class="tag">'Mexico'</span>;
+    </div>
+    <button class="try-btn">Try it Yourself</button>
+  </div>
+</div>
+<!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3>Top Tutorials</h3>
+      <ul>
+        <li><a href="#">HTML Tutorial</a></li>
+        <li><a href="#">CSS Tutorial</a></li>
+        <li><a href="#">JavaScript Tutorial</a></li>
+        <li><a href="#">SQL Tutorial</a></li>
+        <li><a href="#">Python Tutorial</a></li>
+        <li><a href="#">Java Tutorial</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Top References</h3>
+      <ul>
+        <li><a href="#">HTML Reference</a></li>
+        <li><a href="#">CSS Reference</a></li>
+        <li><a href="#">JavaScript Reference</a></li>
+        <li><a href="#">SQL Reference</a></li>
+        <li><a href="#">Python Reference</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Top Examples</h3>
+      <ul>
+        <li><a href="#">HTML Examples</a></li>
+        <li><a href="#">CSS Examples</a></li>
+        <li><a href="#">JavaScript Examples</a></li>
+        <li><a href="#">SQL Examples</a></li>
+        <li><a href="#">Python Examples</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Get Certified</h3>
+      <ul>
+        <li><a href="#">HTML Certificate</a></li>
+        <li><a href="#">CSS Certificate</a></li>
+        <li><a href="#">JavaScript Certificate</a></li>
+        <li><a href="#">Python Certificate</a></li>
+        <li><a href="#">SQL Certificate</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 1999–2025 by YourWebsite. All Rights Reserved.</p>
+    <p><a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+
+</body>
+</html>

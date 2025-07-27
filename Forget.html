@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset your password</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f172a; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #1e293b;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .container img {
+      width: 48px;
+      margin-bottom: 20px;
+    }
+
+    .container h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      font-size: 15px;
+      color: #cbd5e1;
+      margin-bottom: 25px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      background-color: #10b981;
+      color: white;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #059669;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      color: #22c55e;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+   
+    @media (max-width: 500px) {
+      .container {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Reset your password</h2>
+    <p>If the account exists, we will email you instructions to reset the password.</p>
+    <form>
+      <input type="email" placeholder="Enter your email address" required>
+      <button type="submit">Send reset link</button>
+    </form>
+    <a class="back-link" href="/Register.html">Return to Sign In</a>
+  </div>
+
+</body>
+</html>
