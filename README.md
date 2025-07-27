@@ -5,41 +5,31 @@
 
 I developed a **simple clone of the W3Schools website** using only core web technologies:
 
-### 🔧 Technologies Used
-- 🔹 HTML5  
-- 🔹 CSS3
+## 🔧 Technologies Used
+- HTML5  
+- CSS3
 
----
+## 📘 About the Project
 
-## 📘 Why this project?
+This project was built as part of the frontend assignments in the ITI training program.  
+The main objective was to practice building **clean, responsive, and structured web pages** without using any frameworks or external libraries.
 
-As part of the frontend assignments in the training program, the goal was to practice building **clean, structured, and responsive** web pages **without relying on frameworks or external libraries**.
+## 💡 Key Features
 
----
+- ✅ Structured layout inspired by W3Schools  
+- ✅ Sections styled to look like tutorials and code samples  
+- ✅ No JavaScript – only HTML & CSS  
+- ✅ Clean and organized code and folder structure
 
-## 💡 What makes it special?
-
-- ✅ Carefully structured layout inspired by W3Schools  
-- ✅ Styled sections mimicking tutorial blocks and code samples  
-- ✅ Pure HTML & CSS implementation with no JavaScript  
-- ✅ Organized page structure with clean, readable code
-
----
-
-## 📂 What I learned from this project
+## 📂 What I Gained
 
 - 🛠️ Strengthened my frontend development foundations  
-- 🎨 Improved my styling and layout skills  
-- 🧠 Gained a better understanding of how real websites are structured
+- 🎨 Improved my design and layout skills  
+- 🧠 Gained a deeper understanding of how professional websites are structured
+
+## 👩‍💻 Final Words
+
+This project is a small step on my journey to becoming a full-stack developer —  
+and I’m proud of the progress I’ve made so far!
 
 ---
-
-## 👩‍💻 Final Note
-
-It’s a small step toward **mastering the full stack** — and I’m proud of how far I’ve come!
-
----
-
-### 🔖 Hashtags
-
-`#HTML` `#CSS` `#WebDevelopment` `#Frontend` `#ITI` `#PythonDjangoTrack` `#LearningByDoing` `#W3SchoolsClone` `#CodeWithHeba`
