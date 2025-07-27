@@ -31,5 +31,3 @@ The main objective was to practice building **clean, responsive, and structured 
 
 This project is a small step on my journey to becoming a full-stack developer —  
 and I’m proud of the progress I’ve made so far!
-
----
